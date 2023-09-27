@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 __version__ = "0.0.0"
 
-REPO_NAME = "Waste_Detection_YOLOv5"
+REPO_NAME = "Deck_Cards_Detection_YOLOv5"
 AUTHOR_USER_NAME = "Paras Jain"
 SRC_REPO = "YOLO_Object_Detection"
 AUTHOR_EMAIL = "Paras.Jain@eclerx.com"
