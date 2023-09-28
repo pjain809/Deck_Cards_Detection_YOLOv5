@@ -11,5 +11,3 @@ object detection (YOLO v5)
 * Update Component
 * Update Pipelines
 * Update app.py
-
-
