@@ -58,7 +58,7 @@ class DataIngestion:
             raise AppException(e, sys)
 
     def initiate_data_ingestion(self) -> DataIngestionArtifact:
-        logger.info("Initiating Data Ingestion stage (Reached DataIngestion class)...")
+        logger.info("Initiated Data Ingestion stage (Reached DataIngestion class)...")
         try:
             zip_file_name = self.data_ingestion_config.data_file_name
             zip_save_dir = self.data_ingestion_config.data_ingestion_dir
