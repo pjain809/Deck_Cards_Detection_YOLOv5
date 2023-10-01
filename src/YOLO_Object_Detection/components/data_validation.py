@@ -4,7 +4,7 @@ import sys
 import shutil
 from YOLO_Object_Detection.logging import logger
 from YOLO_Object_Detection.exception import AppException
-from YOLO_Object_Detection.entity.config_entity import DataValidationConfig
+from YOLO_Object_Detection.entity.config_entity import DataValidationConfig, DataIngestionConfig
 from YOLO_Object_Detection.entity.artifacts_entity import (DataIngestionArtifact, DataValidationArtifact)
 
 
@@ -51,7 +51,13 @@ class DataValidation:
             logger.info("Finished Data Validation stage (Exited DataValidation class)...")
 
             if status:
-                shutil.copy(self.data_ingestion_artifact.data_zip_file_path, os.getcwd())
+                if not os.path.exists(os.path.join(os.getcwd(), DataIngestionConfig().data_file_name)):
+                    logger.info(f"Copying {DataIngestionConfig().data_file_name} in root directory...")
+                    shutil.copy(self.data_ingestion_artifact.data_zip_file_path, os.getcwd())
+                    logger.info(f"Copied {DataIngestionConfig().data_file_name} in root directory...")
+                else:
+                    logger.info(f"Copy of {DataIngestionConfig().data_file_name} already exists in root directory...")
+
             return data_validation_artifact
 
         except Exception as e:
