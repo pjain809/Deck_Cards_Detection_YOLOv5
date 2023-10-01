@@ -1,5 +1,5 @@
 
-### Waste_Detection_YOLOv5
+### Deck_Cards_Detection_YOLOv5
 
 UI based project to detect and classify waste materials using 
 object detection (YOLO v5)
